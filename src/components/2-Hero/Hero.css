@@ -1,0 +1,75 @@
+/*====================================
+1-Left Section
+2-Right Section
+======================================*/
+.hero{
+    margin-top: 6rem;
+    padding: 2rem 0;
+    
+}
+/*********1-Left Section********/
+.left-box{
+    flex-grow: 1;
+}
+.image{
+    align-items: end;
+    
+}
+
+.hero .title{
+    margin:1.8rem 0;
+    width: 80%;
+}
+.hero .title h1{
+    margin-bottom: 0.8rem;
+    color: var(--title);
+    font-size: 3.4rem;
+    line-height: 3.8rem;
+}
+.hero .title p{
+    color: var(--subTitle);
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    width: 80%;
+    margin: 1.5rem 0 ;
+}
+
+.hero .heroBtn{
+   background-color: var(--mainColor);
+   padding: 0.8rem 1.5rem;
+   border-radius: 0.2rem;
+   color: var(--white);
+border: none;
+
+}
+
+.socialMedia a{
+    padding-right: 1.2rem;
+    font-size: 1.2rem;
+    color: var(--subTitle);
+    
+}
+.socialMedia .icons:hover{
+    font-size: 1.4rem;
+    color: var(--icon-hover);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+
+/********2-Right Section*********/
+
+.animation{
+    margin: auto;
+    width: 65%;
+    /* height:5%; */
+    translate: -20px 20px 10px;
+}
+
+
+@media (max-width:1000px){
+    .animation{
+        display: none;
+    }
+}
