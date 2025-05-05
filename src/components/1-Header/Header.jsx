@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header  className="container flex" >
       <div className="Logo">
-      <img className='navLogo' src="./o-logo1.png" alt="" />
+      <img className='navLogo' src="./../images/o-logo1.png" alt="" />
       </div>
       
       <button onClick={() => {  

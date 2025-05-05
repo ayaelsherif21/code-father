@@ -1,8 +1,9 @@
 {
-  "name": "my-portfolio",
+  "name": "code-father",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://ayaelsherif21.github.io/code-father",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -21,7 +21,7 @@ export default function Team() {
   />
   <label htmlFor="state-dropdown" aria-label="dropdown scrollbar" className="trigger">
     <img
-      src="./logo2.png"
+      src="./../images/logo2.png"
       alt="Profile"
       className="trigger-img"
     />
