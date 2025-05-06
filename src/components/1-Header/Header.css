@@ -55,12 +55,12 @@ file contains:
         align-items: center;
     
     }
-    header li a{
+    header button{
         color: var(--title);
         opacity: 0.9;
         font-size: 0.9rem;
     }
-    header li a:hover{
+    header button:hover{
         color: var(--mainColor);
         opacity: 0.8;
         font-size: 0.92rem;

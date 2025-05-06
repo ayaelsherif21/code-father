@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './Header.css';
+// import {Logo} from '../../images/o-logo1.png';
 
-export default function Header() {
+export default function Header({ scrollToHero, scrollToCourses, scrollToTeam, scrollToContact }) {
   const [showModel, setshowModel] = useState(false)
   const [theme, setTheme] = useState(localStorage.getItem("currMode") ?? "dark" )
 
@@ -19,20 +20,19 @@ export default function Header() {
   return (
     <header  className="container flex" >
       <div className="Logo">
-      <img className='navLogo' src="./../images/o-logo1.png" alt="" />
+      <img className='navLogo' src="../../images/o-logo1.png" alt="" />
       </div>
       
       <button onClick={() => {  
         setshowModel(true);
       }} className='icon-menu navmenu flex'/>
-      <nav>
-      <ul className='flex'>
-        <li><a href="Home">Home</a></li>
-        <li><a href="About">About</a></li>
-        <li><a href="Courses">Courses</a></li>
-        <li><a href="Team">Team</a></li>
-        <li><a href="Contact">Contact</a></li>
-      </ul>
+        <nav>
+        <ul className='flex' >
+          <button onClick={scrollToHero}>Home</button>
+          <button onClick={scrollToCourses}>Courses</button>
+          <button onClick={scrollToTeam}>Team</button>
+          <button onClick={scrollToContact}>Contact</button>
+        </ul>
       </nav>
       <button onClick={()=>{
         //Send value to LS
@@ -54,11 +54,12 @@ export default function Header() {
       <div className="fixed">
       <ul className='model'>
         <li><button className='icon-clear' onClick={() => { setshowModel(false) }}/></li>
-        <li><a href="Home">Home</a></li>
-        <li><a href="About">About</a></li>
-        <li><a href="Courses">Courses</a></li>
-        <li><a href="Team">Team</a></li>
-        <li><a href="Contact">Contact</a></li>
+        <ul className='flex' >
+          <button onClick={scrollToHero}>Home</button>
+          <button onClick={scrollToCourses}>Courses</button>
+          <button onClick={scrollToTeam}>Team</button>
+          <button onClick={scrollToContact}>Contact</button>
+        </ul>
       </ul>
       </div>
      )}
