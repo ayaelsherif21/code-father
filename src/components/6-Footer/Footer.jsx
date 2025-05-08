@@ -9,7 +9,7 @@ export default function Footer() {
         <li><a href="">Team</a></li>
         <li><a href="">Countact</a></li>
       </ul>
-      <p>© 2025 Spencer Sharp. All rights reserved.</p>
+      <p>© 2025 codeFather, All rights reserved.</p>
     </footer>
 
   )

@@ -63,19 +63,6 @@ main .secTitle{
   overflow: visible;
   
 }
-/* .card::before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 60px;
-  height: 40px;
-  background-color: var(--mainColor);
-  border-top-left-radius: 25px;
-  border-top-right-radius:0;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-} */
 
 .card-details {
   color: var(--mainColor);
@@ -83,13 +70,16 @@ main .secTitle{
   gap: 0.5em;
   display: grid;
   place-content: center;
-  /* text-align: center; */
-  /* font-family: 'Courier New', Courier, monospace; */
+}
+.iconTitle p{
+   /* font-weight: 800px; */
+   font-size: 1.32rem;
+ 
 }
 .card img {
   width: 20%;
   border-radius: 50px;
-  padding-right: 1.2rem;
+  padding-right: 0.5rem;
 
 }
 
@@ -147,9 +137,32 @@ main .secTitle{
   transform: translate(-50%, 50%);
   opacity: 1;
 }
+.coming-soon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 37, 46, 0.486); 
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 3;
+  pointer-events: none; 
+}
+.card-button.always-visible {
+  transform: translate(-50%, 50%) !important;
+  opacity: 1 !important;
+  pointer-events: none; 
+}
 
 
-@media (max-width:500px){
+
+@media (max-width:600px){
   main.flex{
       flex-direction: column;
       gap: 1.5rem;

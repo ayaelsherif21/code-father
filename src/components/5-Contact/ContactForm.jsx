@@ -1,11 +1,11 @@
 import React from 'react'
-import './ContactUs.css'
+import './ContactForm.css'
 import { useForm, ValidationError } from '@formspree/react';
 import Lottie from "lottie-react";
 import doneAnimation from '../../Animation/done.json'
 export default function ContactForm() {
     
-      const [state, handleSubmit] = useForm("xldbdkee");
+      const [state, handleSubmit] = useForm("mnndvrne");
       if (state.succeeded) {
         return<p style={{marginTop:"10px" ,fontSize:"1.4rem" , width:"90%"}} className='flex'>
         < Lottie loop={false} style={{height:50}} animationData={doneAnimation} />
@@ -38,15 +38,9 @@ export default function ContactForm() {
       <textarea placeholder="Send to me your Message.."  required rows={5} cols={10}  name="message" id="message"></textarea>
       <ValidationError prefix="Message" field="message" errors={state.errors}/> 
     </div>
-  
-    
-        
+     
     <button type="submit" disabled={state.submitting} className="submit ">Submit</button>
        
-    
-    
-    
-     
     </form>
 
 

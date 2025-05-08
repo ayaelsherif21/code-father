@@ -1,51 +1,351 @@
-/* .course-details {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
+.course-details {
+    width: 800px;
+    height: 500px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: var(--mode);
+    color: var(--title);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: sans-serif;
-  }
+    position: relative;
+    display: flex;
+    gap: 1rem; 
+    overflow-y:auto;
+    }
   
   .course-image {
-    width: 100%;
+    width: 10%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 20px;
+    margin-right: 15px;
   }
   
   .course-title {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
     margin-bottom: 12px;
-    color: #333;
   }
   
   .course-summary {
     font-size: 16px;
     margin-bottom: 16px;
-    color: #555;
   }
-  
-  .course-content {
-    font-size: 15px;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-  
-  .back-button {
-    padding: 10px 20px;
+  .content h3{
+    /* color: white;
+    padding-left: 1.3rem;
     background-color: var(--mainColor);
+    border:1px solid var(--mainColor); */
+    font-size: 1.3rem;
+    font-weight: 700;
     color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: rgba(171, 15, 26, 255); /* Your main color */
+    padding: 5px 20px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  .content h3::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    /* background-color: #f1f1f1; */
+  }
+  .content h3:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .leftDiv{
+    margin-right: 1.3rem;
+  }
+  .course-content {
+    line-height: 1.3;
+    margin:5px 15px 0 20px ;
+    padding-left: 10px;
+    list-style-type: disc;
+    font-size: 0.8rem;
+    border-left: 2px solid #0077ff;
+  }
+  .contact-form-container {
+    padding: 20px;
+    width: 100%;
   }
   
-  .back-button:hover {
-    background-color: #333;
+  .rightDiv {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 50%;
+    padding: 20px;
   }
-   */
+  .course-summary-box {
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(29, 6, 6, 0.1);
+  }
+  
+  .instructor-title,
+  .price-title {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .instructor-name {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  .price-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1rem;
+  }
+  
+  .discounted-price {
+    color: #e63946;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .open-contact-button {
+    background-color: var(--mainColor);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    float: right;
+  }
+  
+  .open-contact-button:hover {
+    background-color: var(--mainColor);
+  }
+ 
+  .back-button {
+    background-color: var(--mainColor);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    position: absolute; 
+    bottom: 2.5rem; 
+    right: 30px; 
+  }
+  .back-button:hover {
+    background-color: var(--mainColor);
+  }
+
+  
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    overflow-y: auto;
+  }
+
+  .modal-content {
+    background-color:var(--mode);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /**************/
+  /* Modal and overlay styles */
+.icon-clear {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+
+
+.close-button {
+  background-color: var(--mainColor);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  float: right;
+}
+
+
+
+
+
+
+/* Fade effect when the modal is shown */
+.course-details.showModal .leftDiv,
+.course-details.showModal .rightDiv {
+  opacity: 0.3; 
+}
+
+.course-details.showModal .modal-overlay {
+  display: flex; 
+}
+
+/* For mobile responsiveness, handle the layout here */
+/* @media screen and (max-width: 768px) {
+  .course-details {
+    padding: 10px;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+    position: relative;
+    flex-wrap: wrap;
+    
+  }
+  .course-title , .course-summary, .content h3{
+    font-size: 12px;
+  }
+  .course-content , .course-summary-box h2 p{
+    font-size: 0.6rem;
+  }
+  .rightDiv{
+    width: 70%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 5%;
+   
+    
+    
+  }
+  .back-button{
+    bottom: -10px;
+    font-size: 11px;
+    
+  }
+  .open-contact-button{
+    float: right; 
+    bottom:60px ;  
+  }
+  .leftDiv{
+    width: 90%;
+    height: 40%;
+  }
+  .icon-clear {
+    font-size: 20px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .modal-content {
+    max-width: 90%;
+  }
+
+
+.contact-form-container {
+  width: 70%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10%;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--mainColor);
+  cursor: pointer;
+}
+.course-summary-box {
+  width: 80%;
+  height: 100%;
+  font-size: 0.9rem;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(29, 6, 6, 0.1);
+}
+
+.instructor-title,
+.price-title {
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.instructor-name {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-info {
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.original-price {
+  font-size: 0.9rem;
+}
+
+.discounted-price {
+  font-size: 0.9rem;
+}
+
+} */
+
+.leftDiv, .rightDiv {
+  flex: 1;
+}
+@media (max-width: 600px) {
+  .course-details {
+    flex-direction: column;
+  }
+
+  .leftDiv, .rightDiv {
+    width: 100%;
+  }
+  .back-button{
+        display: none;
+  }}
+
+
+
+  
+  

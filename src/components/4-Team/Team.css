@@ -79,7 +79,7 @@
   
   .trigger-text {
     flex: 1;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--title);
   }
   .trigger-arrow {
@@ -127,18 +127,20 @@
     height: 100%;
     width: calc(100% + calc(calc(var(--w-scrollbar) / 2) + var(--w-scrollbar)));
     list-style: none;
+
   }
   
   .article {
     padding: 1rem;
     border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
-    text-align: justify;
+    font-size: 0.8rem;
+    font-weight: 430;
+    /* text-align: justify; */
     width: 80%;
     border: 1px solid #c1c2c5;
     display: inline-block;
     background-color: var(--mode);
+
   }
   
   .webkit-scrollbar::-webkit-scrollbar {
@@ -160,3 +162,21 @@
     background: #c1c2c5;
   }
   
+
+  @media (max-width: 700px) {
+    .instructors {
+      flex-direction: column;
+      /* align-items: flex-start; */
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  
+    .list {
+      margin-left: 0;
+      margin-top: 8px;
+    }
+  
+    .dropdown-arrow {
+      align-self: flex-end;
+    }}
+    
